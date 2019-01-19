@@ -15,7 +15,7 @@ export default class List extends React.Component {
         return (
             <div>
                 <div className="">
-                    <ul className="">
+                    <ul className="list">
                         {listItems}
                     </ul>
                 </div>

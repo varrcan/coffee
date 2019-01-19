@@ -56,3 +56,52 @@ body
     &__suggestion
         &--highlighted
             background-color: #ddd
+
+.list
+    padding: 0
+    list-style: none
+    counter-reset: li
+
+    & li
+        position: relative
+        border-left: 4px solid #DDDDDD
+        padding: 16px 20px 16px 28px
+        margin: 12px 0 12px 80px
+        transition-duration: 0.3s
+
+    & li:before
+        line-height: 32px
+        position: absolute
+        top: 10px
+        left: -80px
+        width: 80px
+        text-align: center
+        font-size: 24px
+        font-weight: bold
+        color: #DDDDDD
+        counter-increment: li
+        content: counter(li)
+        transition-duration: 0.3s
+        box-sizing: border-box
+
+    & li:hover:before
+        color: #77AEDB
+
+    & li:after
+        position: absolute
+        top: 26px
+        left: -40px
+        width: 60px
+        height: 60px
+        border: 8px solid #3399FF
+        border-radius: 50%
+        content: ''
+        opacity: 0
+        transition: transform 0.3s, opacity 0.3s
+        transform: translateX(-50%) translateY(-50%) scale(0.1)
+        pointer-events: none
+        box-sizing: border-box
+
+    & li:hover:after
+        opacity: 0.2
+        transform: translateX(-50%) translateY(-50%) scale(1)
