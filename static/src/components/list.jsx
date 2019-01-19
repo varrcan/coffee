@@ -5,7 +5,6 @@ export default class List extends React.Component {
         super(props);
     }
 
-
     render() {
         let arList = this.props.value.list;
 

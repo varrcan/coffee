@@ -24,6 +24,12 @@ export default class Search extends React.Component {
         });
     };
 
+    findElement = (arr, find) => {
+        return arr.filter(function (value) {
+            return (value.toLowerCase() + "").indexOf(find) !== -1;
+        });
+    };
+
     onSuggestionsFetchRequested = ({value}) => {
 
         const inputValue = value.trim().toLowerCase();
@@ -34,9 +40,7 @@ export default class Search extends React.Component {
             return;
         }
 
-        const filterList = this.state.worker.filter(item =>
-            item.toLowerCase().slice(0, inputLength) === inputValue
-        );
+        const filterList = this.findElement(this.state.worker, inputValue);
 
         this.setState({
             suggestions: filterList
